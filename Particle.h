@@ -21,9 +21,10 @@ private:
 	Vector2f	Velocity;
 	Color		ParticleColor;
 	float		Duration = 0;
+	float		ParticleSpeed;
 	//float		Size;
 
-	const float PARTICLE_SIZE = 7.0f;
+	const float PARTICLE_SIZE = 3.0f;
 	const float PARTICLE_DURATION = 2.0f;
 	const float PARTICLE_SPEED = 105.0f;
 
@@ -31,7 +32,7 @@ public:
 	Particle();
 	~Particle();
 
-	void Setup(Vector2f MousePostition, Vector2f ParticleVelocity);
+	void Setup(Vector2f MousePostition, Vector2f ParticleVelocity, float Speed);
 	void Update(float DeltaTime);
 	void Draw(RenderWindow& Window);
 	float GetDuration();

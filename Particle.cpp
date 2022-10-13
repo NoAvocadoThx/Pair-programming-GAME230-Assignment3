@@ -11,6 +11,7 @@
 Particle::Particle()
 {
 	Duration = PARTICLE_DURATION;
+	ParticleSpeed = PARTICLE_SPEED;
 }
 
 //*****************************************************************
@@ -20,21 +21,22 @@ Particle::~Particle()
 }
 
 //*****************************************************************
-void Particle::Setup(Vector2f MousePosition, Vector2f ParticleVelocity)
+void Particle::Setup(Vector2f MousePosition, Vector2f ParticleVelocity, float Speed)
 {
-	Circle.setRadius(PARTICLE_SIZE);
+	Circle.setRadius((float)(2+ (rand() % 7)));
 	Position = MousePosition;
 	Velocity = ParticleVelocity;
 	ParticleColor = Color::White;
 	Duration = PARTICLE_DURATION;
+	ParticleSpeed = Speed;
 
 }
 
 //*****************************************************************
 void Particle::Update(float DeltaTime)
 {
-	Position.x = PARTICLE_SPEED * Velocity.x * DeltaTime + Position.x;
-	Position.y = PARTICLE_SPEED * Velocity.y * DeltaTime + Position.y;
+	Position.x = ParticleSpeed * Velocity.x * DeltaTime + Position.x;
+	Position.y = ParticleSpeed * Velocity.y * DeltaTime + Position.y;
 	Circle.setPosition(Position);
 
 	Duration -= DeltaTime;

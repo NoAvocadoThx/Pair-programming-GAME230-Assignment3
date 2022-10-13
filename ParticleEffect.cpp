@@ -12,13 +12,14 @@
 //*****************************************************************
 ParticleEffect::ParticleEffect()
 {
-	
+	Duration = 10;
 }
 
 //*****************************************************************
 ParticleEffect::~ParticleEffect()
 {
 	Destroy();
+	
 }
 
 //*****************************************************************
@@ -29,9 +30,10 @@ void ParticleEffect::CreateParticleArray(Vector2f MousePosition)
 		Particle* SingleParticle = new Particle();
 		Vector2f Velocity( ((float)(std::rand() % 1500 - 500)), ((float)(std::rand() % 1500 - 500)));
 		Velocity = Normalize(Velocity);
-		SingleParticle->Setup(MousePosition, Velocity);
+		SingleParticle->Setup(MousePosition, Velocity, (float)(40 + (rand() % 60)));
 		ParticleArray[i] = SingleParticle;
 	}
+	Duration = 10;
 
 }
 
@@ -49,6 +51,12 @@ void ParticleEffect::Update(float DeltaTime)
 				ParticleArray[i] = nullptr;
 			}
 		}
+	}
+
+	Duration -= DeltaTime;
+	if (Duration <= 0)
+	{
+		delete this;
 	}
 }
 //*****************************************************************

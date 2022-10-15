@@ -2,6 +2,7 @@
 // GAME 230 assignment 3
 // Particle.cpp
 // Zhihao Wang
+// Dennis Zabluda
 // UCSC GPM FALL 2022
 //*****************************************************************
 
@@ -21,12 +22,12 @@ Particle::~Particle()
 }
 
 //*****************************************************************
-void Particle::Setup(Vector2f MousePosition, Vector2f ParticleVelocity, float Speed)
+void Particle::Setup(Vector2f MousePosition, Vector2f ParticleVelocity, float Speed, Color Color)
 {
 	Circle.setRadius((float)(2+ (rand() % 7)));
 	Position = MousePosition;
 	Velocity = ParticleVelocity;
-	ParticleColor = Color::White;
+	ParticleColor = Color;
 	Duration = PARTICLE_DURATION;
 	ParticleSpeed = Speed;
 
@@ -38,6 +39,7 @@ void Particle::Update(float DeltaTime)
 	Position.x = ParticleSpeed * Velocity.x * DeltaTime + Position.x;
 	Position.y = ParticleSpeed * Velocity.y * DeltaTime + Position.y;
 	Circle.setPosition(Position);
+	Circle.setFillColor(ParticleColor);
 
 	Duration -= DeltaTime;
 

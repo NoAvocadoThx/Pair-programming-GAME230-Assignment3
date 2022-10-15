@@ -2,6 +2,7 @@
 // GAME 230 assignment 3
 // ParticleEffect.h
 // Zhihao Wang
+// Dennis Zabluda
 // UCSC GPM FALL 2022
 //*****************************************************************
 

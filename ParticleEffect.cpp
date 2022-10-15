@@ -2,6 +2,7 @@
 // GAME 230 assignment 3
 // ParticleEffect.cpp
 // Zhihao Wang
+// Dennis Zabluda
 // UCSC GPM FALL 2022
 //*****************************************************************
 
@@ -30,7 +31,9 @@ void ParticleEffect::CreateParticleArray(Vector2f MousePosition)
 		Particle* SingleParticle = new Particle();
 		Vector2f Velocity( ((float)(std::rand() % 1500 - 500)), ((float)(std::rand() % 1500 - 500)));
 		Velocity = Normalize(Velocity);
-		SingleParticle->Setup(MousePosition, Velocity, (float)(40 + (rand() % 60)));
+		Vector3f RGB((float)(std::rand() % 225), (float)(std::rand() % 225), (float)(std::rand() % 225));
+		Color Color(RGB.x, RGB.y, RGB.z);
+		SingleParticle->Setup(MousePosition, Velocity, (float)(40 + (rand() % 60)), Color);
 		ParticleArray[i] = SingleParticle;
 	}
 	Duration = 10;

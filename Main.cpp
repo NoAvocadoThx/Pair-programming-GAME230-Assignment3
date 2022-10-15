@@ -1,6 +1,7 @@
 //*****************************************************************
 // GAME 230 assignment 1
 // Zhihao Wang
+// Dennis Zabluda
 // UCSC GPM FALL 2022
 //*****************************************************************
 
@@ -21,7 +22,7 @@ ParticleEffect* Effect = nullptr;
 int main()
 {
 
-	RenderWindow Window(VideoMode(1000, 1000), "Game 230 Assignment 1");
+	RenderWindow Window(VideoMode(1000, 1000), "Game 230 Assignment 3");
 	Window.setFramerateLimit(60);
 	Clock deltaClock;
 

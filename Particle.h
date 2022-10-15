@@ -2,6 +2,7 @@
 // GAME 230 assignment 3
 // Particle.h
 // Zhihao Wang
+// Dennis Zabluda
 // UCSC GPM FALL 2022
 //*****************************************************************
 
@@ -32,7 +33,7 @@ public:
 	Particle();
 	~Particle();
 
-	void Setup(Vector2f MousePostition, Vector2f ParticleVelocity, float Speed);
+	void Setup(Vector2f MousePostition, Vector2f ParticleVelocity, float Speed, Color Color);
 	void Update(float DeltaTime);
 	void Draw(RenderWindow& Window);
 	float GetDuration();

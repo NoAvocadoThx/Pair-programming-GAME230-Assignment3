@@ -22,13 +22,14 @@ Particle::~Particle()
 }
 
 //*****************************************************************
-void Particle::Setup(Vector2f MousePosition, Vector2f ParticleVelocity, float Speed, Color Color)
+void Particle::Setup(Vector2f MousePosition, Vector2f ParticleVelocity, float Speed, Color Color, float Duration)
 {
 	Circle.setRadius((float)(2+ (rand() % 7)));
 	Position = MousePosition;
 	Velocity = ParticleVelocity;
 	ParticleColor = Color;
-	Duration = PARTICLE_DURATION;
+	//Duration = PARTICLE_DURATION;
+	this->Duration = Duration;
 	ParticleSpeed = Speed;
 
 }
